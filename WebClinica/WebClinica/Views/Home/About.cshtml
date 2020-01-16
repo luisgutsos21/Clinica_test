@@ -1,0 +1,11 @@
+﻿@model WebClinica.Models.userinfo;
+@{
+    ViewData["Title"] = "Informacion";
+}
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    informacion del paciente:<br />
+    Nombre: @Model.nombre @Model.apellidos <br />
+    descripcion: @Model.informacion
+</div>

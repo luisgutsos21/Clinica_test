@@ -1,0 +1,64 @@
+﻿@model WebClinica.Models.useredit
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h2>Editar</h2>
+
+<h4>Clinica</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="idusuario" />
+            <div class="form-group">
+                <label asp-for="LoginUser" class="control-label"></label>
+                <input asp-for="LoginUser" class="form-control" value="@Model.LoginUser" />
+                <span asp-validation-for="LoginUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nombre</label>
+                <input name="nombre" class="form-control" value="@Model.nombre" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Primer Apellido</label>
+                <input name="primerapellido" class="form-control" value="@Model.primerapellido" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Segundo Apellido</label>
+                <input name="segundoapellido" class="form-control" value="@Model.segundoapellido" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Información</label>
+                <input name="descripcion" class="form-control" value="@Model.descripcion" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserPassword" class="control-label"></label>
+                <input asp-for="UserPassword" class="form-control" value="@Model.UserPassword" />
+                <span asp-validation-for="UserPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idusuario" class="control-label"></label>
+                <select asp-for="idusuario" class="form-control" asp-items="ViewBag.IdUser"></select>
+                <span asp-validation-for="idusuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-controller="Home">Regresar al inicio</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

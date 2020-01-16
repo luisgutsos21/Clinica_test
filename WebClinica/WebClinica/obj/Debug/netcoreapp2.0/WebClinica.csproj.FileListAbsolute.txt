@@ -1,0 +1,11 @@
+C:\Users\Luis Carlos\Desktop\Proyecto GAP\WebClinica\WebClinica\bin\Debug\netcoreapp2.0\WebClinica.deps.json
+C:\Users\Luis Carlos\Desktop\Proyecto GAP\WebClinica\WebClinica\bin\Debug\netcoreapp2.0\WebClinica.runtimeconfig.json
+C:\Users\Luis Carlos\Desktop\Proyecto GAP\WebClinica\WebClinica\bin\Debug\netcoreapp2.0\WebClinica.runtimeconfig.dev.json
+C:\Users\Luis Carlos\Desktop\Proyecto GAP\WebClinica\WebClinica\bin\Debug\netcoreapp2.0\WebClinica.dll
+C:\Users\Luis Carlos\Desktop\Proyecto GAP\WebClinica\WebClinica\bin\Debug\netcoreapp2.0\WebClinica.pdb
+C:\Users\Luis Carlos\Desktop\Proyecto GAP\WebClinica\WebClinica\obj\Debug\netcoreapp2.0\WebClinica.csprojResolveAssemblyReference.cache
+C:\Users\Luis Carlos\Desktop\Proyecto GAP\WebClinica\WebClinica\obj\Debug\netcoreapp2.0\WebClinica.csproj.CoreCompileInputs.cache
+C:\Users\Luis Carlos\Desktop\Proyecto GAP\WebClinica\WebClinica\obj\Debug\netcoreapp2.0\WebClinica.AssemblyInfoInputs.cache
+C:\Users\Luis Carlos\Desktop\Proyecto GAP\WebClinica\WebClinica\obj\Debug\netcoreapp2.0\WebClinica.AssemblyInfo.cs
+C:\Users\Luis Carlos\Desktop\Proyecto GAP\WebClinica\WebClinica\obj\Debug\netcoreapp2.0\WebClinica.dll
+C:\Users\Luis Carlos\Desktop\Proyecto GAP\WebClinica\WebClinica\obj\Debug\netcoreapp2.0\WebClinica.pdb

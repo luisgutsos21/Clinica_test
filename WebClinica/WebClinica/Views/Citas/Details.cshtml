@@ -1,0 +1,36 @@
+﻿@model Web_API_Clinica.Models.DBClinica.Citas
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Citas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DescripcionCita)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DescripcionCita)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cancelada)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cancelada)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTipoCitaNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdTipoCitaNavigation.IdTipoCita)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdCita">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,56 @@
+﻿@model WebClinica.Models.DBClinica.LoginUsers
+
+@{
+    ViewData["Title"] = "Registro";
+}
+
+<h4>Registro</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LoginUser" class="control-label">Usuario Log in</label>
+                <input asp-for="LoginUser" class="form-control" />
+                <span asp-validation-for="LoginUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nombre</label>
+                <input name="nombre" class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Primer Apellido</label>
+                <input name="primerapellido" class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Segundo Apellido</label>
+                <input name="segundoapellido" class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Información</label>
+                <input name="descripcion" class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserPassword" class="control-label">Clave</label>
+                <input asp-for="UserPassword" type="password" class="form-control" />
+                <span asp-validation-for="UserPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear usuario" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar al Log in</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

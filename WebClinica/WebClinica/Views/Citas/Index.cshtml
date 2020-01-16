@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebClinica.Models.DBClinica.Citas>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DescripcionCita)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cancelada)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTipoCitaNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescripcionCita)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cancelada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTipoCitaNavigation.IdTipoCita)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdCita">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdCita">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdCita">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

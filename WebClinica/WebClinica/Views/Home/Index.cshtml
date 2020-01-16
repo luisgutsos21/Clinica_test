@@ -1,0 +1,68 @@
+﻿@model IEnumerable<WebClinica.Models.DBClinica.Citas>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Listado de Citas</h2>
+    </div>
+    <div class="col-md-2">
+        <a href="@Url.Action("Create","Citas")" class="btn btn-info">Crear una cita</a>
+    </div>
+    <br />
+</div>
+<div>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Identificacion de cita</th>
+                    <th>descripcion de la cita</th>
+                    <th>tipo de cita</th>
+                    <th>Cancelar Antes de</th>
+                    <th>Fecha confirmada</th>
+                    <th>Cancelada</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr style="background-color: lightblue;">
+                        <td><a href="@Url.Action("Edit","Citas", new { @id = item.IdCita})" class="btn btn-primary">editar</a></td>
+                        <td>@item.IdCita</td>
+                        <td>@item.DescripcionCita</td>
+                        <td>@item.IdTipoCitaNavigation.DescripcionTipo</td>
+                        <td>@item.FechaCita.Value.AddHours(-24).ToString("dd/MM/yyyy hh:mm:ss tt")</td>
+                        <td>@item.FechaCita.Value.ToString("dd/MM/yyyy hh:mm:ss tt")</td>
+                        <td>@if (item.Cancelada)
+                                {@Html.Raw("SI") }
+                                else
+                                { @Html.Raw("NO")}
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    $(document).ready(function (event) {
+
+        $.ajax({
+            method: "GET",
+            async: false,
+            url: "/Home/GetUserRole",
+            contentType: "application/json"
+        }).done(function (data) {
+            
+        })
+            .fail((function (jqXHR, textStatus) {
+                alert("Request failed: " + textStatus);
+            }));
+    });
+</script>

@@ -1,0 +1,65 @@
+﻿@model WebClinica.Models.DBClinica.Citas
+
+@{
+    ViewData["Title"] = "Crear cita";
+}
+
+<h2>Crear cita</h2>
+<h4>Clinica</h4>
+<hr />
+@if (ViewData["msgError"] != null)
+{
+    Html.Raw("Error " + ViewData["msgError"].ToString());
+}
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <input type="hidden" id="iduser" name="iduser" value="@ViewData["user"]" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DescripcionCita" class="control-label">Descripcion</label>
+                <input asp-for="DescripcionCita" class="form-control" />
+                <span asp-validation-for="DescripcionCita" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdTipoCita" class="control-label">Tipo de Cita</label>
+                <select asp-for="IdTipoCita" class="form-control" asp-items="ViewBag.IdTipoCita"></select>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label asp-for="FechaCita" class="control-label">fecha de Cita</label>
+                    <input asp-for="FechaCita" class="form-control" type="datetime-local" name="FechaCita" />
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear Cita" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar al Listado</a>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function (event) {
+
+        $.ajax({
+            method: "GET",
+            async: false,
+            url: "/Home/GetUserRole",
+            contentType: "application/json",
+            data: "{'user':" + 'roger11' + "}"
+        }).done(function (data) {
+            $("#iduser").val(data.idrole);
+        })
+            .fail((function (jqXHR, textStatus) {
+                alert("Request failed: " + textStatus);
+            }));
+    });
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

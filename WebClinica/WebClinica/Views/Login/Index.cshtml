@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WebClinica.Models.DBClinica.LoginUsers>
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<p>
+    <a asp-action="Create">Registrarse</a>
+</p>
+<!--
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LoginUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdUserNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoginUser)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserPassword)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdUserNavigation.IdUser)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdLoginUser">edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdLoginUser">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdLoginUser">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+-->
+<!-- Login Form -->
+<div class="text-center">
+    <div class="container-fluid">
+
+        <form class="row" method="post" action="~">
+            <h1>Log in</h1>
+            <input type="text" id="login" class="row" style="margin-bottom: 10px" name="login" placeholder="login"> <br />
+            <input type="text" id="password" class="row" style="margin-bottom: 10px" name="login" placeholder="password"> <br />
+            <input type="submit" class="row" value="Log In">
+        </form>
+
+    </div>
+</div>
